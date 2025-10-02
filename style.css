@@ -17,14 +17,15 @@ section {
   }
 
   .content {
-    grid-area: 1/2/3/-1;
+    /*Short for: grid row-start, grid column-start, grid row end, grid-column-end*/
+    grid-area: 1/2/3/4;
     > * + * {
       margin-top: 0.75rlh;
     }
   }
 
   figure {
-    grid-area: 1/1/3/-2;
+    grid-area: 1/1/3/3;
     display: grid;
     grid: subgrid/subgrid;
   }
@@ -44,5 +45,17 @@ section {
     color: var(--gray-900);
     background: var(--gray-100);
     padding: 0.4rlh 0.6rlh;
+  }
+}
+@media (width < 600px) {
+  section {
+    /*nulstiller alle grid egenskaber*/
+    grid: revert;
+  }
+  section figure,
+  section .content {
+    /*fjenerer al grid*/
+    display: revert;
+    grid-area: revert;
   }
 }
