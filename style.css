@@ -24,29 +24,49 @@
 
 body {
   font-family: system-ui, sans-serif;
-  margin-inline: 15%;
+  margin-bottom: 3rem;
 }
-article p {
-  display: grid;
-  gap: 20px;
+article {
+  max-width: 70ch;
+  margin-inline: auto;
+}
+
+/*Tager fat i p-elementer hvis de kommer efter et andet p-element */
+p + p {
+  margin-top: 1em;
 }
 
 p {
-  color: var(--gray-700);
+  color: var(--gray-500);
   line-height: 1.6;
-  max-width: 75ch;
+  max-width: 65ch;
   font-size: var(--str-0);
 }
 h1 {
+  margin-top: 2rem;
   color: var(--gray-900);
   font-size: var(--str-4);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
 }
 h2 {
+  margin-top: 2rem;
   color: var(--gray-800);
   font-size: var(--str-3);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
 }
 h3 {
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: var(--gray-700);
   font-size: var(--str-2);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+figcaption {
+  font-size: var(--str--0);
+  color: var(--gray-200);
+  background-color: #4b5563;
+  padding: 10px;
+  margin-bottom: 1rem;
 }
