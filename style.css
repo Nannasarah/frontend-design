@@ -1,2 +1,22 @@
 /* Dine styles her */
-article {}
+
+:root {
+  --standart-space: 0.5rlh;
+}
+
+article {
+  > * + * {
+    margin-top: var(--flow-space, var(--standart-space));
+  }
+
+  h2 {
+    --flow-space: 2rlh;
+  }
+  h3 {
+    --flow-space: 1rlh;
+    /*sætter margin mellem h3 og næste element*/
+    + * {
+      --flow-space: 0.25rlh;
+    }
+  }
+}
