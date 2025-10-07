@@ -15,6 +15,27 @@ const { cardContent } = Astro.props;
 
 <style>
   ul {
+    --scroll-padding: max(1rem, 50% - var(--content-width) / 2);
+
+    padding-inline: var(--scroll-padding);
+    scroll-padding-inline: var(--scroll-padding);
     list-style: none;
+    overflow-x: auto; /* Tillader horizontal scroll, hvis indholdet er bredere end containeren */
+    scroll-snap-type: x mandatory; /* Aktiverer scroll snapping på x-aksen, så elementer "snapper" til startposition */
+    display: flex;
+    gap: var(--card-gap);
+
+    li {
+      scroll-snap-align: start; /* Snapper hvert li-element til start af scroll-containeren */
+      padding: var(--card-padding);
+      background: var(--card-background);
+      color: var(--card-text-color);
+      border-radius: var(--card-border-radius);
+      box-sizing: border-box;
+      scroll-snap-align: start; /* Snapper elementet til startpositionen ved scroll */
+      scroll-snap-stop: always; /* Forhindrer elementet i at "glide" forbi snap point */
+      flex: 1 0 50%; /* Flex egenskaber: vokser til 1, basis 0, fylder 50% af container */
+      width: min(80vw, 300px); /* Maksimal bredde på kortene for små og store skærme */
+    }
   }
 </style>
