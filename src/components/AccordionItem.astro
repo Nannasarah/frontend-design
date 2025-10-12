@@ -75,4 +75,11 @@ const { id, question, answer, linkBlock } = props;
       }
     }
   }
+  details summary svg {
+    transition: transform 0.3s ease;
+  }
+
+  details[open] {
+    --r: 90deg;
+  }
 </style>
